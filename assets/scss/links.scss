@@ -1,0 +1,43 @@
+a[href^="mailto:"] {
+  &::before{
+    content: '✉';
+  }
+}
+
+a[href^="tel:"] {
+  &::before{
+    content: '✆';
+  }
+}
+
+a[href^="https://"]{
+  &::before{
+    content: '⇒';
+  }
+}
+
+a[href^=".pdf"], a[href^=".mp3"], a[href^=".zip"] {
+  &::before{
+    content: '⇓';
+  }
+}
+
+a {
+  color: $light-green;
+
+  footer & {
+    color: black;
+  }
+}
+
+
+/* long version
+a[href^="http://"]:not([href*="mysite.com"]),
+a[href^="https://"]:not([href*="mysite.com"]),
+a[href^="//"]:not([href*="mysite.com"]), {*/
+
+
+/* shorter version!
+a[href*="//"]:not([href*="localhost:3000"]) {
+  //external link styles, use :before or :after if you want!
+} */

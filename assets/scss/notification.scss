@@ -1,0 +1,31 @@
+//placeholder selectors
+%notice {
+  padding: 2em 1em;
+  border: solid 0.5em;
+  margin: .2em;
+}
+
+.notice-error {
+  @extend %notice;
+  color: dodgerblue;
+  border-color: dodgerblue;
+}
+
+.notice-info {
+  @extend %notice;
+  color: orange;
+  border-color: orange;
+}
+
+.notice-warning {
+  @extend %notice;
+  color: red;
+  border-color: red;
+}
+
+@each $name in 'info' 'warning' 'error' {
+  .notice-#{$name} {
+    background: no-repeat url('img/icon-#{$name}.svg') right top;
+    background-size: 2em;
+  }
+}

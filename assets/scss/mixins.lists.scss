@@ -1,0 +1,6 @@
+@mixin list-horizontal($margin:'1em'){
+  display: flex;
+  li {
+    margin: $margin;
+  }
+}
